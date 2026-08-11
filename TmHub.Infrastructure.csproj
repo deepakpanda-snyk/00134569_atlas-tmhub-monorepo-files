@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net10.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\shared-kernel\SharedKernel.AtlasHttpClientFactory\SharedKernel.AtlasHttpClientFactory.csproj" />
+		<ProjectReference Include="..\..\shared-kernel\SharedKernel.Core.Options\SharedKernel.Core.Options.csproj" />
+		<ProjectReference Include="..\..\shared-kernel\SharedKernel.DependencyInjection.Http\SharedKernel.DependencyInjection.Http.csproj" />
+		<ProjectReference Include="..\..\shared-kernel\SharedKernel.DependencyInjection.EntityFrameworkCore.Postgres\SharedKernel.DependencyInjection.EntityFrameworkCore.Postgres.csproj" />
+		<ProjectReference Include="..\..\shared-kernel\SharedKernel.DependencyInjection.EntityFrameworkCore\SharedKernel.DependencyInjection.EntityFrameworkCore.csproj" />
+		<ProjectReference Include="..\..\shared-kernel\SharedKernel.Hosting.Worker\SharedKernel.Hosting.Worker.csproj" />
+		<ProjectReference Include="..\..\shared-kernel\SharedKernel.DependencyInjection.Aws.SecretManager\SharedKernel.DependencyInjection.Aws.SecretManager.csproj" />
+		<ProjectReference Include="..\..\shared-kernel\SharedKernel.DependencyInjection.Aws\SharedKernel.DependencyInjection.Aws.csproj" />
+		<ProjectReference Include="..\..\shared-kernel\SharedKernel.DependencyInjection.Queue.Aws\SharedKernel.DependencyInjection.Queue.Aws.csproj" />
+		<ProjectReference Include="..\..\shared-kernel\SharedKernel.DependencyInjection.Queue\SharedKernel.DependencyInjection.Queue.csproj" /> 
+		<ProjectReference Include="..\..\shared-kernel\SharedKernel.DependencyInjection.SharePoint\SharedKernel.DependencyInjection.SharePoint.csproj" />
+		<ProjectReference Include="..\..\shared-kernel\SharedKernel.Domain.Repositories\SharedKernel.Domain.Repositories.csproj" />
+		<ProjectReference Include="..\..\shared-kernel\SharedKernel.Domain\SharedKernel.Domain.csproj" />
+		<ProjectReference Include="..\..\shared-kernel\SharedKernel.Jwt.TokenProvider\SharedKernel.Jwt.TokenProvider.csproj" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="DocumentFormat.OpenXml" Version="3.3.0" />
+		<PackageReference Include="GraphQL.Client" Version="6.1.0" />
+		<PackageReference Include="EPPlus" Version="7.4.0" />
+		<PackageReference Include="GraphQL.Client.Serializer.SystemTextJson" Version="6.1.0" />
+		<PackageReference Include="Duende.AccessTokenManagement" Version="3.2.0" />
+		<PackageReference Include="Polly" Version="8.4.2" />
+		<PackageReference Include="Microsoft.Identity.Client" Version="4.82.0" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="Services\SharePoint\MockData\**\*">
+			<Link>MockData\%(RecursiveDir)%(Filename)%(Extension)</Link>
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+	<ItemGroup>
+		<None Update="Services\SharePoint\MockData\DownloadFileAsync.xlsx">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+</Project>
